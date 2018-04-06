@@ -25,13 +25,18 @@ class TodoList {
     this.todos.splice(index, 1)
   }
 
+  // Method for clear all todo
+  clearTodo(index){
+    this.todos = []
+  }
+
   // Method for find todo
   findOne(index){
     return this.todos[index]
   }
 
   // Method for find all todo
-  find(){
+  findAll(){
     return this.todos
   }
 }

@@ -4,13 +4,14 @@ var list = new TodoList();
 
 const input = document.getElementById('input')
 const addBtn = document.getElementById('addBtn')
+const clearBtn = document.getElementById('clearBtn')
 const output = document.getElementById('output')
 
 // -----------------------------------------------------------------------------
 
 function showList(){
   output.innerHTML = ""
-  list.find().map((data, index) => {
+  list.findAll().map((data, index) => {
     let e = document.createElement('li')
     e.id = index
     e.innerHTML = `
@@ -34,10 +35,21 @@ function editTodo(index){
   showList()
 }
 
-// -----------------------------------------------------------------------------
-
-addBtn.addEventListener('click', function(){
+function addTodo(){
   let newTodo = new Todo(input.value, new Date());
   list.addTodo(newTodo)
   showList()
-})
+}
+
+function clearTodo(){
+  list.clearTodo()
+  saveToLocalStorage()
+  showList()
+}
+
+// -----------------------------------------------------------------------------
+
+addBtn.addEventListener('click', addTodo)
+clearBtn.addEventListener('click', clearTodo)
+
+// -----------------------------------------------------------------------------
