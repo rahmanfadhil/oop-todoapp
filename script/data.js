@@ -2,11 +2,20 @@ class Todo {
   constructor(name, time){
     this.text = name
     this.time = time
+    this.bookmark = false
   }
 
   editTodo(name, time){
     this.text = name
     this.time = time
+  }
+
+  bookmarkTodo(){
+    this.bookmark = true
+  }
+  
+  unBookmarkTodo(){
+    this.bookmark = false
   }
 }
 
