@@ -66,7 +66,7 @@ function showBookmark(){
     })
   } else {
     notBookmarkList.forEach(item => {
-      item.style.display = "block"
+      item.style.display = "list-item"
     })
   }
 }
